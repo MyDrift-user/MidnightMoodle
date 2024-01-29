@@ -3,7 +3,7 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0
+@version        1.0.1
 @updateURL      https://github.com/BBBaden-Moodle-userscripts/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
@@ -15,6 +15,7 @@
     .userpicture,
     body {
         filter: invert(100%);
+        background-color: #000;
     }
     
     .userinitials {
@@ -39,6 +40,9 @@
     .login-logo {
         filter:invert(100%);
     }
-        
+    
+    .card-img {
+        filter:invert(100%);
+    }
 
 }
