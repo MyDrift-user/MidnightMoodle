@@ -9,5 +9,5 @@ This Userstyle is very dark themed, if you'd like it grayish you'll like:
 [Hutch79's MoodleDarkBoost](https://github.com/Hutch79/MoodleDarkBoost)
 
 
-### Please Support Bugs and recommend improvements if possible!
+### Please report bugs and recommend improvements if possible!
 
