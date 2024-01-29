@@ -36,4 +36,9 @@
         filter: invert(100%);
     }
 
+    .login-logo {
+        filter:invert(100%);
+    }
+        
+
 }
