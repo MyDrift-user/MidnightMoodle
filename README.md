@@ -14,4 +14,5 @@ This Userstyle is very dark themed, if you'd like it grayish you'll like:
 #### Plans:
 
 * [ ] add compatibility with [potential-Points]([potential-Points](https://github.com/BBBaden-Moodle-userscripts/potential-Points/)https://github.com/BBBaden-Moodle-userscripts/potential-Points/)
+* [ ] Fix Document icons
 
