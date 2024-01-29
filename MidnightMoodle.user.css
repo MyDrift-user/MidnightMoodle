@@ -11,7 +11,6 @@
 @preprocessor	stylus
 ==/UserStyle== */
 
-    
     .userpicture,
     body {
         filter: invert(100%);
@@ -44,5 +43,6 @@
     .card-img {
         filter:invert(100%);
     }
+    
 
 }
