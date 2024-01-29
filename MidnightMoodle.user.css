@@ -3,7 +3,7 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0.3
+@version        1.0.2
 @updateURL      https://github.com/BBBaden-Moodle-userscripts/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
@@ -21,27 +21,11 @@
         background: #d3d8d9
     }
     
-    .summary .no-overflow p,
-    .summary .no-overflow span,
-    .summary .no-overflow h1 {
-        filter: none;
-    }
-    
-    
+    .card-img,
+    .login-logo,
+    .activityiconcontainer,
     body img:not(.logo), body video {
         filter: invert(100%);
-    }
-    
-    .activityiconcontainer {
-        filter: invert(100%);
-    }
-
-    .login-logo {
-        filter:invert(100%);
-    }
-    
-    .card-img {
-        filter:invert(100%);
     }
     
     select {
@@ -57,10 +41,13 @@
         background-color: #333;
         color: white;
     }
-
+    
+    .activityicon * {
+        filter: none; 
+    }
+    
     .pp-grade {
         filter:invert(100%);
     }
 
 }
-
