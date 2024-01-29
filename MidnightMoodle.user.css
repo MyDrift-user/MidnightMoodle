@@ -2,35 +2,37 @@
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
 @version        1.0
-@downloadURL    https://github.com/BBBaden-Moodle-userscripts/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @updateURL      https://github.com/BBBaden-Moodle-userscripts/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
 @license        MIT
 @preprocessor	stylus
-@match          *://moodle.bbbaden.ch/*
 ==/UserStyle== */
 
-.userpicture,
-body {
-    filter: invert(100%);
-}
+@-moz-document url-prefix("moodle.bbbaden.ch") {
+    
+    .userpicture,
+    body {
+        filter: invert(100%);
+    }
+    
+    .userinitials {
+        background: #d3d8d9
+    }
+    
+    .summary .no-overflow p,
+    .summary .no-overflow span,
+    .summary .no-overflow h1 {
+        filter: none;
+    }
+    
+    
+    body img:not(.logo), body video {
+        filter: invert(100%);
+    }
+    
+    .activityiconcontainer {
+        filter: invert(100%);
+    }
 
-.userinitials {
-    background: #d3d8d9
-}
-
-.summary .no-overflow p,
-.summary .no-overflow span,
-.summary .no-overflow h1 {
-    filter: none;
-}
-
-
-body img:not(.logo), body video {
-    filter: invert(100%);
-}
-
-.activityiconcontainer {
-    filter: invert(100%);
 }
