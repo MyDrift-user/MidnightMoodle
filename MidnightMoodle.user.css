@@ -8,6 +8,7 @@
 @author         MyDrift
 @license        MIT
 @preprocessor	stylus
+@match          *://*/*
 ==/UserStyle== */
 
 .userpicture,
