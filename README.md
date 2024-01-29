@@ -1,6 +1,6 @@
 # MidnightMoodle
 
-![Image](https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css)
+[![Static Badge](https://img.shields.io/badge/Install-Script-green?style=for-the-badge)](https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css)
 
 A Userstyle that allows you to use Darkmode on [Moodle](https://moodle.bbbaden.ch/)
 
