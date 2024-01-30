@@ -4,7 +4,7 @@
 
 A Userstyle that allows you to use Darkmode on [Moodle](https://moodle.bbbaden.ch/)
 
-This Userstyle is very dark themed, if you'd like it grayish you'll like:
+This Userstyle is very dark themed, if you'd want it grayish you'll like:
 
 [Hutch79's MoodleDarkBoost](https://github.com/Hutch79/MoodleDarkBoost)
 
