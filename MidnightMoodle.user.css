@@ -77,36 +77,36 @@
 /*BBB Userscriptmanager black icon support*/
 
     tbody tr {
-        background-color: #d6d6d6; /* Mid-tone grey that will invert to a comfortable dark grey */
-        color: #202020; /* Dark text color that will invert to light text */
-        border-bottom: 1px solid #a0a0a0; /* Border color that will become a slightly lighter grey when inverted */
+        background-color: #d6d6d6; 
+        color: #202020; 
+        border-bottom: 1px solid #a0a0a0; 
     }
 
     tbody tr:nth-child(odd) {
-        background-color: #e0e0e0; /* Slightly lighter grey for odd rows, will invert to a darker grey for contrast */
+        background-color: #e0e0e0; 
     }
 
     tbody td {
-        padding: 8px; /* Maintain padding for cell content */
-        vertical-align: top; /* Keep content aligned to the top */
+        padding: 8px; 
+        vertical-align: top;
     }
 
     tbody td a {
-        text-decoration: none; /* No underline for a cleaner look */
+        text-decoration: none; 
     }
 
     tbody td a:hover {
-        text-decoration: underline; /* Underline on hover for better user interaction */
+        text-decoration: underline; 
     }
 
     tbody .btn {
-        background-color: #e0e0e0; /* Button background that inverts to a darker shade */
-        border-color: #d0d0d0; /* Button border that inverts to a medium shade */
-        color: #202020; /* Button text color that inverts to light */
+        background-color: #e0e0e0; 
+        border-color: #d0d0d0;
+        color: #202020; 
     }
 
     tbody .btn:hover {
-        background-color: #cacaca; /* Darker background on hover, inverts to a lighter shade */
+        background-color: #cacaca; 
     }
     
 }
