@@ -1,5 +1,3 @@
-@-moz-document domain("moodle.bbbaden.ch") {
-
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
@@ -11,6 +9,8 @@
 @preprocessor	stylus
 ==/UserStyle== */
 
+@-moz-document domain("moodle.bbbaden.ch") {
+    
     .userpicture,
     body {
         filter: invert(100%);
@@ -20,10 +20,31 @@
     .userinitials {
         background: #d3d8d9
     }
-    
+
+/*audio bar*/
+    .vjs-control-bar,
+/*PF of users*/
+    .userpicture,
+/*Almost everything*/
+    body {
+        filter: invert(100%);
+        background-color: #000;
+    }
+/*Icons of users without a profile picture*/
+    .userinitials {
+        background: #d3d8d9
+    }
+/*Test Navigation*/
+    .trafficlight,
+/*Potential Points*/
+    .pp-grade,
+
     .card-img,
+/*Logo at login*/
     .login-logo,
+
     .activityiconcontainer,
+/*Disable invertion of images & videos*/
     body img:not(.logo), body video {
         filter: invert(100%);
     }
@@ -31,10 +52,6 @@
     select {
         background-color: #333;
         color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 4px;
-        outline: none;
     }
 
     option {
@@ -42,12 +59,54 @@
         color: white;
     }
     
-    .activityicon * {
-        filter: none; 
+    select .btn {
+        color: white;
     }
     
-    .pp-grade {
-        filter:invert(100%);
+    .thispageholder {
+/*Test Navigation borders*/
+        /*color: red;*/
+/*Test Navigation content of quest-boxes -> Visible*/
+        background-color: transparent;
+    }
+        
+}
+
+@-moz-document url("https://moodle.bbbaden.ch/userscript/extensions") {
+
+/*BBB Userscriptmanager black icon support*/
+
+    tbody tr {
+        background-color: #d6d6d6; /* Mid-tone grey that will invert to a comfortable dark grey */
+        color: #202020; /* Dark text color that will invert to light text */
+        border-bottom: 1px solid #a0a0a0; /* Border color that will become a slightly lighter grey when inverted */
     }
 
+    tbody tr:nth-child(odd) {
+        background-color: #e0e0e0; /* Slightly lighter grey for odd rows, will invert to a darker grey for contrast */
+    }
+
+    tbody td {
+        padding: 8px; /* Maintain padding for cell content */
+        vertical-align: top; /* Keep content aligned to the top */
+    }
+
+    tbody td a {
+        text-decoration: none; /* No underline for a cleaner look */
+    }
+
+    tbody td a:hover {
+        text-decoration: underline; /* Underline on hover for better user interaction */
+    }
+
+    tbody .btn {
+        background-color: #e0e0e0; /* Button background that inverts to a darker shade */
+        border-color: #d0d0d0; /* Button border that inverts to a medium shade */
+        color: #202020; /* Button text color that inverts to light */
+    }
+
+    tbody .btn:hover {
+        background-color: #cacaca; /* Darker background on hover, inverts to a lighter shade */
+    }
+    
 }
