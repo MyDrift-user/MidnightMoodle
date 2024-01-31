@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0.3
+@version        1.0.4
 @updateURL      https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
@@ -68,6 +68,13 @@
         /*color: red;*/
 /*Test Navigation content of quest-boxes -> Visible*/
         background-color: transparent;
+    }
+
+/*Mark Text*/
+    ::-webkit-selection,
+    ::selection {
+        color: white;
+        background: red; 
     }
         
 }
