@@ -7,106 +7,40 @@
 @author         MyDrift
 @license        MIT
 @preprocessor	stylus
-@var select     amountInvertion                  "Visibility"                  ["0%", "88%", "100%"]
+@var select    modes                    "Modes"                      ["Light", "Dark", "Midnight", "Custom"]
+@var range     invertperc               "Visibility"                 [88, 0, 100, 1, "%"]
+@var text      invertion                "test"                       "'0%'"
 ==/UserStyle== */
-
-@-moz-document domain("moodle.bbbaden.ch") {
     
-    .userinitials {
-        background: #d3d8d9
-    }
-
-/*Test Question Background*/
-    .que .formulation {
-        border-color: #B8DCE200;
-        if (amountInvertion == 88%) {
-            background-color: #F8F8F8;
-        } else if (amountInvertion == 100%) {
-            background-color: #EEE;
-        }
-    }
-/*Dashboard Courseimages*/
-    .card-img {
-        if (amountInvertion == 0%) {
-            filter: invert(0%);
-        } else {
-            filter:invert(100%);
-        }
-    }
-/*audio bar*/
-    .vjs-control-bar,
-/*PF of users*/
-    .userpicture,
-/*Almost everything*/
-    body {
-        filter: invert(amountInvertion);
-        if (amountInvertion == 100%) {
-            background-color: #000;
-        } else if (amountInvertion == 88%) {
-            background-color: #1f1f1f;
-        } else {
-            background-color: #FFF;        
-        }
-    }
-/*Icons of users without a profile picture*/
-    .userinitials {
-        background: #d3d8d9
-    }
-/*Test Navigation*/
-    .trafficlight,
-/*Potential Points*/
-    .pp-grade,
-/*Logo at login*/
-    .login-logo {
-        filter: invert(amountInvertion);
-    }
-
-/*Disable invertion of images & videos*/
-    body img:not(.logo), body video {
-        if (amountInvertion == 0%) {
-            filter: invert(0%);
-        } else {
-            filter: invert(100%);
-        }
+    body video,
+    body img:not(.logo, .login-logo),
+    html:not(.pp-grade, .vjs-control-bar, .trafficlight) {
+        filter: invert(amountinvert);
     }
     
-    if (amountInvertion == 100% || amountInvertion == 88%)  {
-        select {
-            background-color: #333;
-            color: white;
-        }
 
-        option {
-            background-color: #333;
-            color: white;
-        }
-
-        select .btn {
-            color: white;
-        }
-    }
-    
-    .thispageholder {
-/*Test Navigation borders*/
-        /*color: red;*/
-/*Test Navigation content of quest-boxes -> Visible*/
-        background-color: transparent;
-    }
-
-/*Mark Text*/
-    ::-webkit-selection,
-    ::selection {
+/*Some Dropdown Buttons*/
+    select {
+        background-color: #333;
         color: white;
-        background: red; 
+    }
+
+    option {
+        background-color: #333;
+        color: white;
+    }
+
+    select .btn {
+        color: white;
     }
     
-}
-
-
-@-moz-document url("https://moodle.bbbaden.ch/login/index.php") {
-    html,
-    .login-container {
-        filter: invert(amountInvertion);
+/*Mark Text*/
+    if (amountInvertion < 50%) {
+        ::-webkit-selection,
+        ::selection {
+            color: white;
+            background: red; 
+        }
     }
 }
 @-moz-document url("https://moodle.bbbaden.ch/userscript/extensions") {
