@@ -1,13 +1,13 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0.5
+@version        1.0.4
 @updateURL      https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
 @license        MIT
 @preprocessor	stylus
-@var select     amountInvertion                  "Visibility 🖌️"                  ["0%", "88%", "100%"]
+@var select     amountInvertion                  "Visibility"                  ["0%", "88%", "100%"]
 ==/UserStyle== */
 
 @-moz-document domain("moodle.bbbaden.ch") {
@@ -16,6 +16,9 @@
         background: #d3d8d9
     }
 
+    
+/*Dashboard Courseimages*/
+    .card-img,
 /*audio bar*/
     .vjs-control-bar,
 /*PF of users*/
@@ -26,7 +29,7 @@
         if (amountInvertion == 100%) {
             background-color: #000;
         } else if (amountInvertion == 88%) {
-            background-color: #222324;
+            background-color: #1f1f1f;
         } else {
             background-color: #FFF;        
         }
@@ -39,8 +42,6 @@
     .trafficlight,
 /*Potential Points*/
     .pp-grade,
-
-    .card-img,
 /*Logo at login*/
     .login-logo {
         filter: invert(amountInvertion);
@@ -56,19 +57,20 @@
             filter: invert(0%);      
         }
     }
-    
-    select {
-        background-color: #333;
-        color: white;
-    }
+    if (amountInvertion == 100% || amountInvertion == 88%)  {
+        select {
+            background-color: #333;
+            color: white;
+        }
 
-    option {
-        background-color: #333;
-        color: white;
-    }
-    
-    select .btn {
-        color: white;
+        option {
+            background-color: #333;
+            color: white;
+        }
+
+        select .btn {
+            color: white;
+        }
     }
     
     .thispageholder {
