@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0.5
+@version        1.0.6
 @updateURL      https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
@@ -10,19 +10,21 @@
 @var select     amountInvertion                  "Visibility"                  ["0%", "88%", "100%"]
 ==/UserStyle== */
 
-
-
-
-
-
-
 @-moz-document domain("moodle.bbbaden.ch") {
     
     .userinitials {
         background: #d3d8d9
     }
 
-    
+/*Test Question Background*/
+    .que .formulation {
+        border-color: #B8DCE200;
+        if (amountInvertion == 88%) {
+            background-color: #F8F8F8;
+        } else if (amountInvertion == 100%) {
+            background-color: #EEE;
+        }
+    }
 /*Dashboard Courseimages*/
     .card-img {
         if (amountInvertion == 0%) {
