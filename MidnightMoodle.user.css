@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0.4
+@version        1.0.5
 @updateURL      https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
@@ -9,6 +9,12 @@
 @preprocessor	stylus
 @var select     amountInvertion                  "Visibility"                  ["0%", "88%", "100%"]
 ==/UserStyle== */
+
+
+
+
+
+
 
 @-moz-document domain("moodle.bbbaden.ch") {
     
@@ -18,7 +24,13 @@
 
     
 /*Dashboard Courseimages*/
-    .card-img,
+    .card-img {
+        if (amountInvertion == 0%) {
+            filter: invert(0%);
+        } else {
+            filter:invert(100%);
+        }
+    }
 /*audio bar*/
     .vjs-control-bar,
 /*PF of users*/
@@ -49,14 +61,13 @@
 
 /*Disable invertion of images & videos*/
     body img:not(.logo), body video {
-        if (amountInvertion == 100%) {
-            filter: invert(100%);
-        } else if (amountInvertion == 88%) {
-            filter: invert(112%);  
+        if (amountInvertion == 0%) {
+            filter: invert(0%);
         } else {
-            filter: invert(0%);      
+            filter: invert(100%);
         }
     }
+    
     if (amountInvertion == 100% || amountInvertion == 88%)  {
         select {
             background-color: #333;
@@ -87,12 +98,6 @@
         background: red; 
     }
     
-    /*Aufgabenicons *
-    .activityiconcontainer *,
-    .activityiconcontainer {
-        filter: 100%;
-    }
-    */    
 }
 
 
@@ -105,38 +110,39 @@
 @-moz-document url("https://moodle.bbbaden.ch/userscript/extensions") {
 
 /*BBB Userscriptmanager black icon support*/
+    if (amountInvertion != 0%) {
+        tbody tr {
+            background-color: #d6d6d6; 
+            color: #202020; 
+            border-bottom: 1px solid #a0a0a0; 
+        }
 
-    tbody tr {
-        background-color: #d6d6d6; 
-        color: #202020; 
-        border-bottom: 1px solid #a0a0a0; 
-    }
+        tbody tr:nth-child(odd) {
+            background-color: #e0e0e0; 
+        }
 
-    tbody tr:nth-child(odd) {
-        background-color: #e0e0e0; 
-    }
+        tbody td {
+            padding: 8px; 
+            vertical-align: top;
+        }
 
-    tbody td {
-        padding: 8px; 
-        vertical-align: top;
-    }
+        tbody td a {
+            text-decoration: none; 
+        }
 
-    tbody td a {
-        text-decoration: none; 
-    }
+        tbody td a:hover {
+            text-decoration: underline; 
+        }
 
-    tbody td a:hover {
-        text-decoration: underline; 
-    }
+        tbody .btn {
+            background-color: #e0e0e0; 
+            border-color: #d0d0d0;
+            color: #202020; 
+        }
 
-    tbody .btn {
-        background-color: #e0e0e0; 
-        border-color: #d0d0d0;
-        color: #202020; 
-    }
-
-    tbody .btn:hover {
-        background-color: #cacaca; 
+        tbody .btn:hover {
+            background-color: #cacaca; 
+        }
     }
     
 }
