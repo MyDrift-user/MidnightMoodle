@@ -26,7 +26,7 @@
         if (amountInvertion == 100%) {
             background-color: #000;
         } else if (amountInvertion == 88%) {
-            background-color: #282828;
+            background-color: #222324;
         } else {
             background-color: #FFF;        
         }
