@@ -1,21 +1,16 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0.4
+@version        1.0.5
 @updateURL      https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
 @license        MIT
 @preprocessor	stylus
+@var select     amountInvertion                  "Side Nav"                  ["0%", "88%", "100%"]
 ==/UserStyle== */
 
 @-moz-document domain("moodle.bbbaden.ch") {
-    
-    .userpicture,
-    body {
-        filter: invert(100%);
-        background-color: #000;
-    }
     
     .userinitials {
         background: #d3d8d9
@@ -27,8 +22,14 @@
     .userpicture,
 /*Almost everything*/
     body {
-        filter: invert(100%);
-        background-color: #000;
+        filter: invert(amountInvertion);
+        if (amountInvertion == 100%) {
+            background-color: #000;
+        } else if (amountInvertion == 88%) {
+            background-color: #282828;
+        } else {
+            background-color: #FFF;        
+        }
     }
 /*Icons of users without a profile picture*/
     .userinitials {
@@ -41,12 +42,19 @@
 
     .card-img,
 /*Logo at login*/
-    .login-logo,
+    .login-logo {
+        filter: invert(amountInvertion);
+    }
 
-    .activityiconcontainer,
 /*Disable invertion of images & videos*/
     body img:not(.logo), body video {
-        filter: invert(100%);
+        if (amountInvertion == 100%) {
+            filter: invert(100%);
+        } else if (amountInvertion == 88%) {
+            filter: invert(112%);  
+        } else {
+            filter: invert(0%);      
+        }
     }
     
     select {
@@ -76,9 +84,22 @@
         color: white;
         background: red; 
     }
-        
+    
+    /*Aufgabenicons *
+    .activityiconcontainer *,
+    .activityiconcontainer {
+        filter: 100%;
+    }
+    */    
 }
 
+
+@-moz-document url("https://moodle.bbbaden.ch/login/index.php") {
+    html,
+    .login-container {
+        filter: invert(amountInvertion);
+    }
+}
 @-moz-document url("https://moodle.bbbaden.ch/userscript/extensions") {
 
 /*BBB Userscriptmanager black icon support*/
