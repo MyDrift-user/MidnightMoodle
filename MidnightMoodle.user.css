@@ -1,27 +1,28 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0.6
+@version        1.0.7
 @updateURL      https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
 @license        MIT
 @preprocessor	stylus
-@var select     mode                    "Modes"                      ["Light", "Dark", "Midnight", "Custom"]
-@var text      amountinvert             "Visibility in %"            0
+@var select     mode                    "Modes"                      ["Dark", "Midnight", "Light", "Custom"]
+@var text       amountinvert            "Visibility in %"            0
 ==/UserStyle== */
-@-moz-document domain("moodle.bbbaden.ch") {
 
+@-moz-document domain("moodle.bbbaden.ch") {
+    
     .pp-grade, 
     .vjs-control-bar, 
     .trafficlight
     body video,
-    body img:not(.logo, .login-logo),
+    body img:not(.logo, .login-logo *),
     html:not(.pp-grade, .vjs-control-bar, .trafficlight) {
         if (mode == Light) {
             filter: invert(0%);
         } else if (mode == Dark) {
-            filter: invert(88%);
+            filter: invert(90%);
         } else if (mode == Midnight) {
             filter: invert(100%);
         } else if (amountinvert != "") {
@@ -29,7 +30,7 @@
         }
     }
     
-    if (mode != Light || mode == Dark || mode == Midnight || modeamountinvert < 100) {
+    if (mode != Light || mode == Dark || mode == Midnight || mode != Light && mode != Dark && mode != Midnight && modeamountinvert < 100) {
         /*Mark Text*/
         ::-webkit-selection,
         ::selection {
@@ -56,7 +57,7 @@
     /*Test Question Background*/
     .que, .formulation {
         border-color: #B8DCE200;
-        if (amountinvert == 88%) {
+        if (amountinvert == 90%) {
             background-color: #F8F8F8;
         } else if (amountinvert == 100%) {
             background-color: #EEE;
