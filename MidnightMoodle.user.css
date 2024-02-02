@@ -12,7 +12,8 @@
 ==/UserStyle== */
 
 @-moz-document domain("moodle.bbbaden.ch") {
-    
+
+    .card-img,
     .pp-grade, 
     .vjs-control-bar, 
     .trafficlight
