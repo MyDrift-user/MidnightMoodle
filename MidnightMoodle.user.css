@@ -1,76 +1,44 @@
 /* ==UserStyle==
 @name           MidnightMoodle
 @namespace      https://github.com/MyDrift-user/MidnightMoodle/
-@version        1.0.6
+@version        1.0.7
 @updateURL      https://github.com/MyDrift-user/MidnightMoodle/raw/main/MidnightMoodle.user.css
 @description    Don't get blind on sunday night before submission time
 @author         MyDrift
 @license        MIT
 @preprocessor	stylus
-@var select     amountInvertion                  "Visibility"                  ["0%", "88%", "100%"]
+@var select     mode                    "Modes"                      ["Dark", "Midnight", "Light", "Custom"]
+@var text       amountinvert            "Visibility in %"            0
 ==/UserStyle== */
 
 @-moz-document domain("moodle.bbbaden.ch") {
     
-    .userinitials {
-        background: #d3d8d9
-    }
-
-/*Test Question Background*/
-    .que .formulation {
-        border-color: #B8DCE200;
-        if (amountInvertion == 88%) {
-            background-color: #F8F8F8;
-        } else if (amountInvertion == 100%) {
-            background-color: #EEE;
-        }
-    }
-/*Dashboard Courseimages*/
-    .card-img {
-        if (amountInvertion == 0%) {
+    .pp-grade, 
+    .vjs-control-bar, 
+    .trafficlight
+    body video,
+    body img:not(.logo, .login-logo *),
+    html:not(.pp-grade, .vjs-control-bar, .trafficlight) {
+        if (mode == Light) {
             filter: invert(0%);
-        } else {
-            filter:invert(100%);
-        }
-    }
-/*audio bar*/
-    .vjs-control-bar,
-/*PF of users*/
-    .userpicture,
-/*Almost everything*/
-    body {
-        filter: invert(amountInvertion);
-        if (amountInvertion == 100%) {
-            background-color: #000;
-        } else if (amountInvertion == 88%) {
-            background-color: #1f1f1f;
-        } else {
-            background-color: #FFF;        
-        }
-    }
-/*Icons of users without a profile picture*/
-    .userinitials {
-        background: #d3d8d9
-    }
-/*Test Navigation*/
-    .trafficlight,
-/*Potential Points*/
-    .pp-grade,
-/*Logo at login*/
-    .login-logo {
-        filter: invert(amountInvertion);
-    }
-
-/*Disable invertion of images & videos*/
-    body img:not(.logo), body video {
-        if (amountInvertion == 0%) {
-            filter: invert(0%);
-        } else {
+        } else if (mode == Dark) {
+            filter: invert(90%);
+        } else if (mode == Midnight) {
             filter: invert(100%);
+        } else if (amountinvert != "") {
+            filter: invert(amountinvert + '%');
         }
     }
     
-    if (amountInvertion == 100% || amountInvertion == 88%)  {
+    if (mode != Light || mode == Dark || mode == Midnight || mode != Light && mode != Dark && mode != Midnight && modeamountinvert < 100) {
+        /*Mark Text*/
+        ::-webkit-selection,
+        ::selection {
+            color: white;
+            background: red; 
+        }
+        
+        /*Some Dropdown Buttons*/
         select {
             background-color: #333;
             color: white;
@@ -86,33 +54,20 @@
         }
     }
     
-    .thispageholder {
-/*Test Navigation borders*/
-        /*color: red;*/
-/*Test Navigation content of quest-boxes -> Visible*/
-        background-color: transparent;
-    }
-
-/*Mark Text*/
-    ::-webkit-selection,
-    ::selection {
-        color: white;
-        background: red; 
-    }
-    
-}
-
-
-@-moz-document url("https://moodle.bbbaden.ch/login/index.php") {
-    html,
-    .login-container {
-        filter: invert(amountInvertion);
+    /*Test Question Background*/
+    .que, .formulation {
+        border-color: #B8DCE200;
+        if (amountinvert == 90%) {
+            background-color: #F8F8F8;
+        } else if (amountinvert == 100%) {
+            background-color: #EEE;
+        }
     }
 }
 @-moz-document url("https://moodle.bbbaden.ch/userscript/extensions") {
 
 /*BBB Userscriptmanager black icon support*/
-    if (amountInvertion != 0%) {
+    if (amountInvert >= 50) {
         tbody tr {
             background-color: #d6d6d6; 
             color: #202020; 
