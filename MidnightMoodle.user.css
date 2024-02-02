@@ -12,7 +12,7 @@
 ==/UserStyle== */
 
 @-moz-document domain("moodle.bbbaden.ch") {
-
+    
     .card-img,
     .pp-grade, 
     .vjs-control-bar, 
@@ -28,6 +28,13 @@
             filter: invert(100%);
         } else if (amountinvert != "") {
             filter: invert(amountinvert + '%');
+        }
+    }
+    
+    .card-img,
+    body img:not(.logo, .login-logo *) {
+        if (mode == Dark) {
+            filter: invert(100%);
         }
     }
     
@@ -68,7 +75,7 @@
 @-moz-document url("https://moodle.bbbaden.ch/userscript/extensions") {
 
 /*BBB Userscriptmanager black icon support*/
-    if (amountInvert >= 50) {
+    if (mode != Light || mode == Dark || mode == Midnight || mode != Light && mode != Dark && mode != Midnight && modeamountinvert > 50) {
         tbody tr {
             background-color: #d6d6d6; 
             color: #202020; 
