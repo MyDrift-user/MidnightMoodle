@@ -11,6 +11,8 @@
 @var range     invertperc               "Visibility"                 [88, 0, 100, 1, "%"]
 @var text      invertion                "test"                       "'0%'"
 ==/UserStyle== */
+
+@-moz-document domain("https://moodle.bbbaden.ch/") {
     
     body video,
     body img:not(.logo, .login-logo),
