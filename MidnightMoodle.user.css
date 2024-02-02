@@ -8,8 +8,7 @@
 @license        MIT
 @preprocessor	stylus
 @var select    modes                    "Modes"                      ["Light", "Dark", "Midnight", "Custom"]
-@var range     invertperc               "Visibility"                 [88, 0, 100, 1, "%"]
-@var text      invertion                "test"                       "'0%'"
+@var text      amountinvert             "Visibility"                 "0%"
 ==/UserStyle== */
 
 @-moz-document domain("https://moodle.bbbaden.ch/") {
