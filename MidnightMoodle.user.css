@@ -7,47 +7,66 @@
 @author         MyDrift
 @license        MIT
 @preprocessor	stylus
-@var select    modes                    "Modes"                      ["Light", "Dark", "Midnight", "Custom"]
-@var text      amountinvert             "Visibility"                 "0%"
+@var select     mode                    "Modes"                      ["Light", "Dark", "Midnight", "Custom"]
+@var text      amountinvert             "Visibility in %"            ["0"]
 ==/UserStyle== */
+@-moz-document domain("moodle.bbbaden.ch") {
 
-@-moz-document domain("https://moodle.bbbaden.ch") {
-    
+    .pp-grade, 
+    .vjs-control-bar, 
+    .trafficlight
     body video,
     body img:not(.logo, .login-logo),
     html:not(.pp-grade, .vjs-control-bar, .trafficlight) {
-        filter: invert(amountinvert);
+        if (mode == Light) {
+            filter: invert(0%);
+        } else if (mode == Dark) {
+            filter: invert(88%);
+        } else if (mode == Midnight) {
+            filter: invert(100%);
+        } else if (amountinvert != "") {
+            filter: invert(amountinvert + '%');
+        }
     }
     
-
-/*Some Dropdown Buttons*/
-    select {
-        background-color: #333;
-        color: white;
-    }
-
-    option {
-        background-color: #333;
-        color: white;
-    }
-
-    select .btn {
-        color: white;
-    }
-    
-/*Mark Text*/
-    if (amountInvertion < 50%) {
+    if (mode != Light || mode == Dark || mode == Midnight || modeamountinvert < 100) {
+        /*Mark Text*/
         ::-webkit-selection,
         ::selection {
             color: white;
             background: red; 
+        }
+        
+        /*Some Dropdown Buttons*/
+        select {
+            background-color: #333;
+            color: white;
+        }
+
+        option {
+            background-color: #333;
+            color: white;
+        }
+
+        select .btn {
+            color: white;
+        }
+    }
+    
+    /*Test Question Background*/
+    .que, .formulation {
+        border-color: #B8DCE200;
+        if (amountinvert == 88%) {
+            background-color: #F8F8F8;
+        } else if (amountinvert == 100%) {
+            background-color: #EEE;
         }
     }
 }
 @-moz-document url("https://moodle.bbbaden.ch/userscript/extensions") {
 
 /*BBB Userscriptmanager black icon support*/
-    if (amountInvertion != 0%) {
+    if (amountInvert >= 50) {
         tbody tr {
             background-color: #d6d6d6; 
             color: #202020; 
