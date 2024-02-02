@@ -11,7 +11,7 @@
 @var text      amountinvert             "Visibility"                 "0%"
 ==/UserStyle== */
 
-@-moz-document domain("https://moodle.bbbaden.ch/") {
+@-moz-document domain("https://moodle.bbbaden.ch") {
     
     body video,
     body img:not(.logo, .login-logo),
